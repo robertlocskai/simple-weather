@@ -3,12 +3,14 @@
     <h1>20°C</h1>
     <h3>Esztergom</h3>
     <div class="details">
-      <div><img src="./icons/humidity.svg" alt="humidity" /> 85%</div>
+      <div><img src="./icons/humidity.svg" alt="humidity" id="humidity" /> 85%</div>
       <div>
-        Feels Like <br />
+        Feels Like <br id="mobile" />
         11°C
       </div>
-      <div><img src="./icons/wind.svg" alt="humidity" /> 6.17MPH</div>
+      <div style="justify-self: flex-end">
+        <img src="./icons/wind.svg" alt="wind" id="wind" /> 6.17MPH
+      </div>
     </div>
   </div>
 </template>
@@ -40,8 +42,11 @@ h3 {
   margin: 0px;
 }
 
+br#mobile {
+  display: none;
+}
+
 .details {
-  width: 45rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -60,5 +65,37 @@ h3 {
   align-items: center;
   text-align: center;
   gap: 1rem;
+}
+
+img#humidity {
+  width: 30px;
+}
+img#wind {
+  width: 50px;
+}
+
+@media (max-width: 775px) {
+  .details {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 55px;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  .details {
+    font-size: 1rem;
+  }
+  .details > div {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  br#mobile {
+    display: block;
+  }
 }
 </style>
