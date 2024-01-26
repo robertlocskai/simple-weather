@@ -29,7 +29,6 @@
   height: 100%;
 }
 svg {
-  z-index: -1;
   filter: blur(6rem);
   opacity: 70%;
   width: 100%;
