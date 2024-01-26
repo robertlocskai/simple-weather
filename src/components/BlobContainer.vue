@@ -25,6 +25,7 @@
 
 <style scoped>
 .container {
+  z-index: -2;
   position: absolute;
   width: 100%;
   height: 100%;

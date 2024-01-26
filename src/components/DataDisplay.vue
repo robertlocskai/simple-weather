@@ -32,7 +32,8 @@ const { getImage } = storeToRefs(weatherStore)
 
 <style scoped>
 .container {
-  z-index: 2;
+  transform: translateY(-5rem);
+  z-index: -1;
   position: absolute;
   width: 100%;
   height: 100%;
