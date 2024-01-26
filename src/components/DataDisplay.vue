@@ -6,10 +6,12 @@ import { ref } from 'vue'
 // stores
 const weatherStore = useWeatherStore()
 const { getWeather } = storeToRefs(weatherStore)
+const { getImage } = storeToRefs(weatherStore)
 </script>
 
 <template>
   <div class="container">
+    <img :src="getImage" alt="Weather Icon" />
     <h1>{{ getWeather.main.temp }}°C</h1>
     <h3>Esztergom</h3>
     <div class="details">
@@ -78,6 +80,11 @@ br#mobile {
   align-items: center;
   text-align: center;
   gap: 1rem;
+}
+
+img {
+  height: 10rem;
+  margin-bottom: 1rem;
 }
 
 img#humidity {
