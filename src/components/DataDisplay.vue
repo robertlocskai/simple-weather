@@ -13,7 +13,7 @@ const { getImage } = storeToRefs(weatherStore)
   <div class="container">
     <img :src="getImage" alt="Weather Icon" />
     <h1>{{ getWeather.main.temp }}°C</h1>
-    <h3>Esztergom</h3>
+    <h3>{{ getWeather.name }}</h3>
     <div class="details">
       <div>
         <img src="./icons/humidity.svg" alt="humidity" id="humidity" />
