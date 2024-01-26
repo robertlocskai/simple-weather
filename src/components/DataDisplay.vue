@@ -96,10 +96,14 @@ img#wind {
 
 @media (max-width: 775px) {
   .details {
-    gap: 2rem;
+    gap: 0.1rem;
     flex-direction: column;
   }
+  img {
+    height: 5rem;
+  }
 }
+
 @media (max-width: 400px) {
   h1 {
     font-size: 55px;
@@ -109,10 +113,10 @@ img#wind {
   }
   .details {
     font-size: 1rem;
+    gap: 0px;
   }
   .details > div {
-    flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.5rem;
   }
   br#mobile {
     display: block;
