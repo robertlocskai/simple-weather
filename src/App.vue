@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar.vue'
 </script>
 
 <template>
+  <SearchBar></SearchBar>
   <BlobContainer></BlobContainer>
   <DataDisplay></DataDisplay>
 </template>

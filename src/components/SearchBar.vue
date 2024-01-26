@@ -5,31 +5,40 @@ function handleSubmit() {
 </script>
 
 <template>
-  <div class="searchBarContainer">
-    <form @submit-prevent="handleSubmit()">
-      <input type="text" id="searchbar" placeholder="London..." />
-      <button>
-        <img src="@/components/icons/searchIcon.svg" />
-      </button>
-    </form>
+  <div class="wrapper">
+    <div class="container">
+      <form @submit-prevent="handleSubmit()">
+        <label for="send">
+          <img src="@/components/icons/searchIcon.svg" />
+        </label>
+        <input type="text" id="searchbar" placeholder="London..." />
+        <input type="submit" value=" " name="send" id="send" />
+      </form>
+    </div>
   </div>
 </template>
 <style scoped>
-div.searchBarContainer {
+div.wrapper {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
-input#searchbar {
-  outline: none;
+div.container {
+  position: relative;
+  width: 40rem;
+  padding: 1rem;
+}
+
+input[type='text'] {
   border: none;
-  height: 4rem;
-  width: 40%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  border-radius: 5rem;
-  font-size: 1.2rem;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1rem;
   background-color: #191a24;
   opacity: 40%;
   color: white;
@@ -37,26 +46,22 @@ input#searchbar {
   font-weight: 500;
   box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 10px;
   transition: 0.2s;
+
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+input[type='submit'] {
+  display: none;
 }
 
-input#searchbar:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
-}
-
-button {
+label {
+  z-index: 10;
   position: absolute;
-  height: 4rem;
-  width: 4rem;
-  border-radius: 2rem;
-  outline: none;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  margin-top: 1px;
-  transform: translateX(-100%);
-  opacity: 70%;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 12px;
 }
-
-button:hover {
+label:hover {
   cursor: pointer;
 }
 </style>
