@@ -1,33 +1,10 @@
-<script setup></script>
+<script setup>
+import BlobContainer from '@/components/BlobContainer.vue'
+</script>
 
 <template>
-  <!--BLOBS-->
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path
-      fill="#9FF893"
-      d="M51.8,-41.4C62.5,-27.9,63.4,-6.6,56.1,7.8C48.8,22.3,33.4,29.8,16.3,40.8C-0.9,51.7,-19.8,66,-37.8,63.2C-55.9,60.4,-73.2,40.5,-75.6,20.1C-77.9,-0.3,-65.5,-21.3,-50.4,-35.9C-35.3,-50.4,-17.7,-58.6,1.4,-59.7C20.5,-60.9,41.1,-55,51.8,-41.4Z"
-      transform="translate(0 0)"
-    />
-    <path
-      fill="#CB3AE9"
-      d="M49.1,1.3C49.1,22.6,24.5,45.2,2.3,45.2C-20,45.2,-40,22.6,-40,1.3C-40,-20.1,-20,-40.2,2.3,-40.2C24.5,-40.2,49.1,-20.1,49.1,1.3Z"
-      transform="translate(170 40)"
-    />
-    <path
-      fill="#891AFA"
-      d="M48.7,-8.7C48.7,6.8,24.3,13.5,-3.3,13.5C-30.9,13.5,-61.8,6.8,-61.8,-8.7C-61.8,-24.2,-30.9,-48.3,-3.3,-48.3C24.3,-48.3,48.7,-24.2,48.7,-8.7Z"
-      transform="translate(170 120)"
-    />
-  </svg>
-
-  <!--BLOBS-->
+  <BlobContainer></BlobContainer>
 </template>
 
 <style scoped>
-svg {
-  z-index: -1;
-  position: absolute;
-  filter: blur(6rem);
-  opacity: 70%;
-}
 </style>
