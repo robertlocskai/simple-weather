@@ -4,8 +4,8 @@ import DataDisplay from '@/components/DataDisplay.vue'
 </script>
 
 <template>
-  <DataDisplay></DataDisplay>
   <BlobContainer></BlobContainer>
+  <DataDisplay></DataDisplay>
 </template>
 
 <style scoped></style>

@@ -1,15 +1,28 @@
+<script setup>
+import { storeToRefs } from 'pinia'
+import { useWeatherStore } from '../stores/weather'
+import { ref } from 'vue'
+
+// stores
+const weatherStore = useWeatherStore()
+const { getWeather } = storeToRefs(weatherStore)
+</script>
+
 <template>
   <div class="container">
-    <h1>20°C</h1>
+    <h1>{{ getWeather.main.temp }}°C</h1>
     <h3>Esztergom</h3>
     <div class="details">
-      <div><img src="./icons/humidity.svg" alt="humidity" id="humidity" /> 85%</div>
+      <div>
+        <img src="./icons/humidity.svg" alt="humidity" id="humidity" />
+        {{ getWeather.main.humidity }}%
+      </div>
       <div>
         Feels Like <br id="mobile" />
-        11°C
+        {{ getWeather.main.feels_like }}°C
       </div>
       <div style="justify-self: flex-end">
-        <img src="./icons/wind.svg" alt="wind" id="wind" /> 6.17MPH
+        <img src="./icons/wind.svg" alt="wind" id="wind" /> {{ getWeather.wind.speed }}MPH
       </div>
     </div>
   </div>
