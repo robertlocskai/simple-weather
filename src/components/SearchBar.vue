@@ -1,17 +1,25 @@
 <script setup>
+import { ref } from 'vue'
+import { useWeatherStore } from '../stores/weather'
+
+// stores
+const weatherStore = useWeatherStore()
+const input = ref(null)
+
 function handleSubmit() {
-  console.log('TEST')
+  weatherStore.getWeatherData(input.value)
+  input.value = ''
 }
 </script>
 
 <template>
   <div class="wrapper">
     <div class="container">
-      <form @submit-prevent="handleSubmit()">
+      <form @submit.prevent="handleSubmit()">
         <label for="send">
           <img src="@/components/icons/searchIcon.svg" />
         </label>
-        <input type="text" id="searchbar" placeholder="London..." />
+        <input type="text" v-model="input" id="searchbar" placeholder="London..." />
         <input type="submit" value=" " name="send" id="send" />
       </form>
     </div>

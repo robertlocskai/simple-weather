@@ -25,7 +25,10 @@ export const useWeatherStore = defineStore('weather', () => {
         `${API_URI}${town}+&appid=${import.meta.env.VITE_API_KEY}`
       )
 
-      if (!fetchWeather) throw new Error("Couldn't fetch data from this place...")
+      if (!fetchWeather) {
+        alert("Couldn't fetch data from this place...")
+        throw new Error("Couldn't fetch data from this place...")
+      }
 
       weather.value = fetchWeather.data
       let weatherType = weather.value.weather[0].main
@@ -42,6 +45,7 @@ export const useWeatherStore = defineStore('weather', () => {
       }
     } catch (err) {
       console.log(err)
+      alert("Couldn't fetch data from this place...")
     }
   }
 
